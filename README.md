@@ -28,6 +28,6 @@ Installation Instructions
 <!-- End DTOD Modal Script -->
 ```
 
-2. Paste the entire script snippet into the footer of your website, just above the <body> tag.
+2. Paste the entire script snippet into the footer of your website, just above the ```<body>``` tag.
 
 3. The snippet uses the light theme by default. You can change this in the snippet where indicated.
