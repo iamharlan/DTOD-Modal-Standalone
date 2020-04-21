@@ -1,6 +1,11 @@
 (function($) {  // beginning jquery function
 // Modal
 
+    // Add Modal to Page
+    $.get("https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/modal.html", function(data){
+        $("body").append(data);
+    });
+
     // Exit intent
     function addEvent(obj, evt, fn) {
         if (obj.addEventListener) {
