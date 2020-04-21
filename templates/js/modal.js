@@ -43,11 +43,12 @@
             setTimeout(function() {
                 $('#pc_modal').fadeIn();
                 $('.modalmask').fadeIn();
-                localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
-            }, timercount);            
+                // localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
+            }, timercount);
         }
-        // Cookie Expires every 5 Days
-        $.cookie('visited', 'yes', { expires: 5, path: '/' });
+        // Cookie Expires every 1 Hour
+        var inOneHour = 1/24;
+        $.cookie('visited', 'yes', { expires: inOneHour, path: '/' });
 
         // Test if session cookie is enabled
         // if("pc_modal_cookie" in localStorage){
