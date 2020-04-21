@@ -1,35 +1,29 @@
 (function($) {  // beginning jquery function
-// Modal
 
     // Add Modal to Page
     $.get("https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/modal.html", function(data){
         $("body").append(data);
-    });
 
-    // Exit intent
-    function addEvent(obj, evt, fn) {
-        if (obj.addEventListener) {
-            obj.addEventListener(evt, fn, false);
-        }
-        else if (obj.attachEvent) {
-            obj.attachEvent("on" + evt, fn);
-        }
-    }
-
-    // Apply Variables for Theme
-    $(document).ready(function() {
+        // Apply Variables for Theme    
         if (pc_theme == 'dark') {
             $('#pc_modal').addClass('dark');
-            $('#pc_modal .logo').attr("src", $('#pc_modal .logo').attr("src") + "_dark.png");
+            $('#pc_modal .logo').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/dtod_logo_light.png");
         } else if(pc_theme == 'light') {
             $('#pc_modal').addClass('light');
-            $('#pc_modal .logo').attr("src", $('#pc_modal .logo').attr("src") + "_light.png");
+            $('#pc_modal .logo').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/dtod_logo_dark.png");
         } 
-    });
 
+        // Save Exit intent listener for possible use later
+        function addEvent(obj, evt, fn) {
+            if (obj.addEventListener) {
+                obj.addEventListener(evt, fn, false);
+            }
+            else if (obj.attachEvent) {
+                obj.attachEvent("on" + evt, fn);
+            }
+        }
 
-    // Modal Deployment
-    $(document).ready(function() {
+        // Modal Deployment
         var visited = $.cookie('visited');
         if (visited == 'yes') {
             return false;
@@ -38,7 +32,7 @@
               if (evt.toElement === null && evt.relatedTarget === null && !localStorage.getItem('pc_modal_cookie')) {
                 $('#pc_modal').fadeIn();
                 $('.modalmask').fadeIn();
-                localStorage.setItem('pc_modal_cookie', 'true'); // Set the flag in localStorage
+                localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
               }
             });
 
@@ -49,7 +43,7 @@
             setTimeout(function() {
                 $('#pc_modal').fadeIn();
                 $('.modalmask').fadeIn();
-                localStorage.setItem('pc_modal_cookie', 'true'); // Set the flag in localStorage
+                localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
             }, timercount);            
         }
         // Cookie Expires every 5 Days
@@ -61,12 +55,13 @@
         // } else {
         //    alert('NO, Cookie is not in LocalStorage');
         // }
+
+        // Closing the Popup Box
+        $('.close_modal, .modalmask').click(function() {
+          $('#pc_modal').fadeOut();
+          $('.modalmask').fadeOut();
+        });
+
     });
 
-    // Closing the Popup Box
-    $('.close_modal, .modalmask').click(function() {
-      $('#pc_modal').fadeOut();
-      $('.modalmask').fadeOut();
-    });
-
-})( jQuery );  // End of wordpress function
+})( jQuery );  // End of jquery function
