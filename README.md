@@ -13,6 +13,7 @@ Installation Instructions
 
 1. Copy the entire script snippet provided below, including begin and end tags:
 
+```
 <!-- Begin DTOD Modal Script -->
 <script type="text/javascript">
 	// Options Available
@@ -25,6 +26,7 @@ Installation Instructions
 <style src="https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/css/modal.css"></style>
 <script type="text/javascript">function pc_modal(){var a=$("body");$.get("https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/modal.html",function(t){for(var d=0;d<data.length;d++)a.append($(t))})}</script>
 <!-- End DTOD Modal Script -->
+```
 
 2. Paste the entire script snippet into the footer of your website, just above the <body> tag.
 
