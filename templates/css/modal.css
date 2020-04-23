@@ -5,7 +5,7 @@
 #pc_modal #closemodal { position:absolute; top:20px; right:20px; font-size:1.35em; color:#fff; }
 #pc_modal h2 { line-height:1.2em; color:#DC3229; margin-bottom:12px; }
 #pc_modal h3 { line-height:1.2em; color:#fff; margin-bottom:12px; }
-#pc_modal p { margin-bottom:12px; }
+#pc_modal p { font-size:1.15em; margin-bottom:12px; }
 #pc_modal a { color:#DC3229; }
 #pc_modal a.cta { display:block; margin-bottom:40px; }
 #pc_modal a#close { font-weight:300; color:#888 }
