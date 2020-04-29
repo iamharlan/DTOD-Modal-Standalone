@@ -8,9 +8,15 @@
         if (pc_theme == 'dark') {
             $('#pc_modal').addClass('dark');
             $('#pc_modal .logo').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/dtod_logo_light.png");
+            $('#pc_modal .step1').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step1_light.png");
+            $('#pc_modal .step2').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step2_light.png");
+            $('#pc_modal .step3').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step3_light.png");
         } else if(pc_theme == 'light') {
             $('#pc_modal').addClass('light');
             $('#pc_modal .logo').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/dtod_logo_dark.png");
+            $('#pc_modal .step1').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step1_dark.png");
+            $('#pc_modal .step2').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step2_dark.png");
+            $('#pc_modal .step3').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step3_dark.png");
         } 
 
         // Save Exit intent listener for possible use later

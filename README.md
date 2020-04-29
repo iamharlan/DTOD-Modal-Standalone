@@ -20,7 +20,7 @@ Installation Instructions
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/css/modal.min.css" type="text/css" >
 <script type="text/javascript">
 	// Options Available – Leave these alone for defaults.
-	var pc_theme = "light"; // Theme is "light" by default. Change to "dark" for dark theme.
+	var pc_theme = "dark"; // Theme is "dark" by default. Change to "light" for light theme.
 	var pc_type = "timer"; // Modal is "timer" by default. Change to "exitintent" for deploy on mouseout.
 	var pc_timer = 5; // Time after page load until popup deploys in seconds. 5 is default.
 </script>
