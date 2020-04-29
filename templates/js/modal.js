@@ -71,4 +71,25 @@
 
     });
 
+    // Add Sticky Button to Page
+    if (pc_stickybutton == 'enabled') {
+
+        $.get("https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/stickybutton.html", function(sbdata){
+            $("body").append(sbdata);
+
+            // Apply Variables for Theme    
+            if (pc_theme == 'dark') {
+                $('#pc_stickybutton').addClass('dark');
+            } else if(pc_theme == 'light') {
+                $('#pc_stickybutton').addClass('light');
+            } 
+
+            // Closing the Sticky Button
+            $('.close_stickybutton').click(function() {
+              $('#pc_stickybutton').fadeOut();
+            });
+
+        });
+    }
+
 })( jQuery );  // End of jquery function
