@@ -37,8 +37,8 @@
 #pc_stickybutton { position:fixed; z-index:9997; bottom:10px; left:10px; width:300px; text-align:center; padding:20px; background:#000; color:#fff; border-radius: 8px; border:1px solid #fff; }
 #pc_stickybutton.disabled { display:none !important; }
 #pc_stickybutton.light { background:#fff; color:#555; border:1px solid #555; }
-#pc_stickybutton h4 { font-size:1.15rem; line-height:1.2em; color:#555; margin:0 0 8px; }
-#pc_stickybutton a.cta { font-size:0.8em; display:block; margin:12px auto 0px; padding:12px 0px; background:#DC3229; border-radius:5px; color:#fff; text-decoration: none; text-transform: uppercase; }
+#pc_stickybutton h4 { font-size:1.1rem; line-height:1.2em; color:#555; margin:0 0 8px; }
+#pc_stickybutton a.cta { font-size:1.1em; display:block; margin:12px auto 0px; padding:12px 0px; background:#DC3229; border-radius:5px; color:#fff; text-decoration: none; text-transform: uppercase; }
 
 
 /* Fixes for Very Large Displays */
