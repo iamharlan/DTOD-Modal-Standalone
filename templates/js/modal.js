@@ -84,6 +84,12 @@
                 $('#pc_stickybutton').addClass('light');
             } 
 
+            // Open the Popup Modal with the Sticky Button
+            $('#pc_openmodal').click(function() {
+              $('#pc_modal').fadeIn();
+              $('.modalmask').fadeIn();
+            });
+
             // Closing the Sticky Button
             $('.close_stickybutton').click(function() {
               $('#pc_stickybutton').fadeOut();
