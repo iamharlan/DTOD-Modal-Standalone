@@ -84,6 +84,13 @@
                 $('#pc_stickybutton').addClass('light');
             } 
 
+            // Apply Variables for Button Position    
+            if (pc_stickybuttonposition == 'left') {
+                $('#pc_stickybutton').addClass('bottomleft');
+            } else if(pc_stickybuttonposition == 'right') {
+                $('#pc_stickybutton').addClass('bottomright');
+            } 
+
             // Open the Popup Modal with the Sticky Button
             $('#pc_openmodal').click(function() {
               $('#pc_modal').fadeIn();

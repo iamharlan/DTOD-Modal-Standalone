@@ -14,7 +14,7 @@ Installation Instructions
 1. Copy the entire script snippet provided below, including begin and end tags:
 
 ```
-<!-- Begin DTOD Modal Script -->
+<!-- Begin DTOD Modal Script 1.1.2 -->
 <script src="https://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/css/modal.min.css" type="text/css" >
@@ -24,6 +24,7 @@ Installation Instructions
 	var pc_type = "timer"; // Modal is "timer" by default. Change to "exitintent" for deploy on mouseout.
 	var pc_timer = 5; // Time after page load until popup deploys in seconds. 5 is default.
 	var pc_stickybutton = "enabled"; // Adds sticky button option. Change to "disabled" to remove.
+	var pc_stickybuttonposition = "left"; // Sets sticky button position. "right" is also available.
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/js/modal.min.js"></script>
 <!-- End DTOD Modal Script -->
