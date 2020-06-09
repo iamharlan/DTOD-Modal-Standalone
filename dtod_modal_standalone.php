@@ -1,4 +1,4 @@
-<!-- Begin DTOD Modal Script 1.1.3 -->
+<!-- Begin DTOD Modal Script 1.1.4 -->
 <script src="https://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/css/modal.min.css" type="text/css" >
