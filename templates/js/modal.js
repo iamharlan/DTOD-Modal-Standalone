@@ -1,4 +1,4 @@
-wa(function($) {  // beginning jquery function
+(function($) {  // beginning jquery function
 
     // Add Modal to Page
     if (pc_modalactivation == 'enabled') {
