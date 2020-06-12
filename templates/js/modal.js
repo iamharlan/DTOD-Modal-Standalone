@@ -20,7 +20,7 @@
                 $('#pc_modal .step3').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step3_dark.png");
             } 
 
-            if (pc_modalactivation == 'enabled') {
+            if (pc_modalactivation !== 'disabled') {
 
                 // Save Exit intent listener for possible use later
                 function addEvent(obj, evt, fn) {
