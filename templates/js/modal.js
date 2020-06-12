@@ -1,7 +1,7 @@
 (function($) {  // beginning jquery function
 
     // Add Modal to Page
-    if (pc_modalactivation == 'enabled') {
+
         $.get("https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/modal.html", function(data){
             $("body").append(data);
 
@@ -20,49 +20,53 @@
                 $('#pc_modal .step3').attr("src", "https://cdn.jsdelivr.net/gh/iamharlan/dtod-modal-standalone@1/templates/img/step3_dark.png");
             } 
 
-            // Save Exit intent listener for possible use later
-            function addEvent(obj, evt, fn) {
-                if (obj.addEventListener) {
-                    obj.addEventListener(evt, fn, false);
+            if (pc_modalactivation == 'enabled') {
+
+                // Save Exit intent listener for possible use later
+                function addEvent(obj, evt, fn) {
+                    if (obj.addEventListener) {
+                        obj.addEventListener(evt, fn, false);
+                    }
+                    else if (obj.attachEvent) {
+                        obj.attachEvent("on" + evt, fn);
+                    }
                 }
-                else if (obj.attachEvent) {
-                    obj.attachEvent("on" + evt, fn);
+
+                // Modal Deployment
+                var visited = $.cookie('visited');
+                if (visited == 'yes') {
+                    return false;
+                } else if(pc_type == 'exitintent') {
+                    addEvent(document, 'mouseout', function(evt) {
+                      if (evt.toElement === null && evt.relatedTarget === null && !localStorage.getItem('pc_modal_cookie')) {
+                        $('#pc_modal').fadeIn();
+                        $('.modalmask').fadeIn();
+                        localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
+                      }
+                    });
+
+                } else if(pc_type == 'timer') {
+
+                    var timercount = pc_timer * 1000;
+
+                    setTimeout(function() {
+                        $('#pc_modal').fadeIn();
+                        $('.modalmask').fadeIn();
+                        // localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
+                    }, timercount);
                 }
-            }
+                // Cookie Expires every 1 Hour
+                var inOneHour = 1/24;
+                $.cookie('visited', 'yes', { expires: inOneHour, path: '/' });
 
-            // Modal Deployment
-            var visited = $.cookie('visited');
-            if (visited == 'yes') {
-                return false;
-            } else if(pc_type == 'exitintent') {
-                addEvent(document, 'mouseout', function(evt) {
-                  if (evt.toElement === null && evt.relatedTarget === null && !localStorage.getItem('pc_modal_cookie')) {
-                    $('#pc_modal').fadeIn();
-                    $('.modalmask').fadeIn();
-                    localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
-                  }
-                });
+                // Test if session cookie is enabled
+                // if("pc_modal_cookie" in localStorage){
+                //    alert('YES, Cookie is in LocalStorage');
+                // } else {
+                //    alert('NO, Cookie is not in LocalStorage');
+                // }
 
-            } else if(pc_type == 'timer') {
-
-                var timercount = pc_timer * 1000;
-
-                setTimeout(function() {
-                    $('#pc_modal').fadeIn();
-                    $('.modalmask').fadeIn();
-                    // localStorage.setItem('pc_modal_cookie', 'true'); // Creates browser session cookie in localStorage so modal doesn't repeat
-                }, timercount);
-            }
-            // Cookie Expires every 1 Hour
-            var inOneHour = 1/24;
-            $.cookie('visited', 'yes', { expires: inOneHour, path: '/' });
-
-            // Test if session cookie is enabled
-            // if("pc_modal_cookie" in localStorage){
-            //    alert('YES, Cookie is in LocalStorage');
-            // } else {
-            //    alert('NO, Cookie is not in LocalStorage');
-            // }
+            }        
 
             // Closing the Popup Box
             $('.close_modal, .modalmask').click(function() {
@@ -71,8 +75,6 @@
             });
 
         });
-
-    }        
 
     // Add Sticky Button to Page
     if (pc_stickybutton == 'enabled') {
